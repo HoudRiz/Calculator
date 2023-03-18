@@ -1,12 +1,13 @@
 :root {
-    --g1: rgb(98, 0, 234);
-    --g2: rgb(236, 64, 122);
+    --g1: #E33FD3;
+    --g2: #913FE3;
   }
 body {
     display: grid;
     background-color: rgb(20, 20, 20);
     grid-template-columns: 1fr 400px 1fr ;
     grid-template-rows: 1fr 500px 1fr;
+    font-family: 'Roboto', sans-serif;
 }
 
 @keyframes background-pan {
@@ -95,4 +96,10 @@ body {
     margin-top: 20px;
     text-align: center;
     color: white;
+}
+.operator{
+    background-color: #453e47c0;
+}
+#equal{
+    background-color: #453E4780;
 }
