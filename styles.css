@@ -2,14 +2,14 @@ body {
     display: grid;
     background-color: rgb(20, 20, 20);
     grid-template-columns: 1fr 400px 1fr ;
-    grid-template-rows: 1fr 450px 1fr;
+    grid-template-rows: 1fr 500px 1fr;
 }
 
 
 .content{
-    border: solid 2px white;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgb(44, 144, 232);
     grid-column: 2/3;
     grid-row: 2/3;
@@ -17,9 +17,19 @@ body {
 }
 
 .display {
+    flex: 1;
     background-color: aliceblue;
 }
-
+.container{
+    position: relative;
+    flex: 2;
+    background-color: aqua;
+}
+.button-container {
+    position: absolute;
+    inset: 15px;
+    background-color: blueviolet;
+}
 
 .footer{
     grid-column: 2/3;
