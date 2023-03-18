@@ -58,14 +58,14 @@ img {
     background-color: #453e47;
 }
 
-.buttons{
+.button-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5,1fr);
     gap: 4px;
     margin: 7px;
 }
-.button-container {
+.background{
     
     border-radius: 10px;
     position: absolute;
