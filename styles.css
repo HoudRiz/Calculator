@@ -62,7 +62,7 @@ img {
     border-radius: 10px;
     position: absolute;
     inset: 5px;
-    animation: background-pan 10s linear infinite;
+    animation: background-pan 5s linear infinite;
     background: linear-gradient(
       to right,
       var(--g1),
