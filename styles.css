@@ -87,15 +87,16 @@ img {
     height: 62px;
     width: 91px;
     background-color: #453e47;
+    transition: 0.3s ;
+}
+.button:hover{
+    background-color: #655A68;
 }
 
 #Github{
     font-size: 20px;
     grid-column: 1/3;
     width: 186px;
-    transition: 0.3s ;
-    
-    
 }
 
 #Github:hover{
@@ -110,13 +111,27 @@ img {
     text-align: center;
     color: white;
 }
+
 .delete-buttons{
     font-size: 32px;
     background-color: #278BE880;
 }
+
+.delete-buttons:hover{
+    background-color: #6AB8FF80;
+}
+
+
 .operator{
     background-color: #453e47c0;
 }
+
+.operator:hover{
+    background-color: #655A68c0;
+}
 #equal{
     background-color: #453E4780;
+}
+#equal:hover{
+    background-color: #655A6880;
 }
