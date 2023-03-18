@@ -1,7 +1,7 @@
-:root{
-
-}
-
+:root {
+    --g1: rgb(98, 0, 234);
+    --g2: rgb(236, 64, 122);
+  }
 body {
     display: grid;
     background-color: rgb(20, 20, 20);
@@ -18,9 +18,22 @@ body {
 }
 
 .display {
+    display: flex;
+    flex-direction: column;
     border-radius: 15px 15px 0px 0px;
     height: 150px;
     background-color: #575c64;
+}
+.equation {
+    margin: 20px;
+    color: #eeeeee;
+}
+.answer {
+    color: #eeeeee;
+    display: flex;
+    justify-content: right;
+    margin: 20px;
+    margin-top: auto;
 }
 .container{
     border-radius: 0px 0px 15px 15px;
@@ -45,8 +58,8 @@ body {
     align-items: center;
     border-radius: 7.5px;
     color: #eeeeee;
-    height: 60px;
-    width: 90px;
+    height: 62px;
+    width: 91px;
     background-color: #453e47;
 }
 
