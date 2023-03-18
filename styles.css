@@ -9,6 +9,15 @@ body {
     grid-template-rows: 1fr 500px 1fr;
 }
 
+@keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
 
 .content{
     display: flex;
@@ -25,10 +34,12 @@ body {
     background-color: #575c64;
 }
 .equation {
+    font-size: 35px;
     margin: 20px;
-    color: #eeeeee;
+    color: #787878;
 }
 .answer {
+    font-size: 60px;
     color: #eeeeee;
     display: flex;
     justify-content: right;
@@ -46,12 +57,22 @@ body {
     border-radius: 10px;
     position: absolute;
     inset: 5px;
-    background-color: blueviolet;
+    animation: background-pan 10s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--g1),
+      var(--g2),
+      var(--g1)
+    );
+    background-size: 200%;
+    overflow: hidden;
+    margin: 0px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5,1fr);
     
 }
 .button {
+    font-size: 30px;
     margin: auto;
     display: flex;
     justify-content: center;
