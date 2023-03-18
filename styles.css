@@ -1,0 +1,22 @@
+body {
+    display: grid;
+    background-color: rgb(20, 20, 20);
+    grid-template-columns: 1fr 400px 1fr ;
+    grid-template-rows: 1fr 450px 1fr;
+}
+
+
+.content{
+    background-color: rgb(44, 144, 232);
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border-radius: 0.5em;
+}
+
+.footer{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
