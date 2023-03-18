@@ -7,11 +7,19 @@ body {
 
 
 .content{
+    border: solid 2px white;
+    display: flex;
+    flex-direction: row;
     background-color: rgb(44, 144, 232);
     grid-column: 2/3;
     grid-row: 2/3;
     border-radius: 0.5em;
 }
+
+.display {
+    background-color: aliceblue;
+}
+
 
 .footer{
     grid-column: 2/3;
