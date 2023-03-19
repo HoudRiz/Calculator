@@ -1,5 +1,5 @@
 const displayEquation = document.querySelector(".equation")
-
+const buttons = document.querySelector(".button-container")
 
 // Mathematical functions
 const add = function(num1,num2) {
@@ -27,4 +27,12 @@ const operate = function(num1,num2,operator){
         divide(num1,num2)
     }
 }
-
+let num = 0;
+buttons.onclick = function(){
+    let button = event.target
+    if (button.classList.contains("number"))
+    {   
+        return  num = button.textContent;
+    };
+    
+}
