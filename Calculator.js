@@ -34,7 +34,10 @@ buttons.onclick = function(){
     {   
         num.push(button.textContent)
         displayEquation.textContent = num.join("");
-    };
-    if 
+    }else if (button.classList.contains("operator"))
+    {   
+        num.push(button.textContent);
+        displayEquation.textContent = num.join("");
+    }; 
     
 }
