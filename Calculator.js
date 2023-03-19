@@ -27,21 +27,24 @@ const operate = function(num1,num2,operator){
         divide(num1,num2)
     }
 }
+
+//Displays number and operator on the screen
 let operator = "";
-let num1 = 0;
+let number = 0;
 let num = [];
 buttons.onclick = function(){
     let button = event.target
     if (button.classList.contains("number"))
     {   
         num.push(button.textContent)
-        num1 = num.join("");
-        displayEquation.textContent = num1;
+        displayEquation.textContent = number;
     }else if (button.classList.contains("operator"))
     {   
         operator = button.textContent;
         num.push(operator);
         displayEquation.textContent = num.join("");
     }; 
+    number = num.join("");
+    console.log (number)
     
 }
