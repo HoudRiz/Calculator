@@ -27,12 +27,14 @@ const operate = function(num1,num2,operator){
         divide(num1,num2)
     }
 }
-let num = 0;
+let num = [];
 buttons.onclick = function(){
     let button = event.target
     if (button.classList.contains("number"))
     {   
-        return  num = button.textContent;
+        num.push(button.textContent)
+        displayEquation.textContent = num.join("");
     };
+    if 
     
 }
