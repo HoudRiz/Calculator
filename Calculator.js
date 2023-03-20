@@ -40,22 +40,29 @@ buttons.onclick = function(){
     {   
         num.push(button.textContent)
         number = num.join("");
-        var result = (number - Math.floor(number)) !== 0; 
-   
-        if (result){
-            console.log('Number has a decimal place.');
-           
-        }
         displayEquation.textContent = number;
-    }else if (button.classList.contains("operator"))
+
+    }else if (button.id == "decimal"){
+        var result = (number - Math.floor(number)) !== 0; 
+        if (result){
+            return;}  
+        num.push(button.textContent)
+        number = num.join("");
+        displayEquation.textContent = number;
+    } 
+
+    else if (button.classList.contains("operator"))
     {   
         operator = button.textContent;
         num.push(operator);
         displayEquation.textContent = num.join("");
+
     }else if (button.classList.contains("all-clear")){
         allClear();
+
     }else if (button.classList.contains("backspace")){
         backSpace()
+
     }else if (button.id == "Github"){
         window.open("https://github.com/HoudRiz", "_blank");    }    
 
