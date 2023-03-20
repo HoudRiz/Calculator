@@ -35,15 +35,15 @@ let operator = "";
 let number = 0;
 let num = [];
 buttons.onclick = function(){
-    let button = event.target.closest(".button")
+    let button = event.target.closest(".button") //enter numbers
     if (button.classList.contains("number"))
     {   
         num.push(button.textContent)
         number = num.join("");
         displayEquation.textContent = number;
 
-    }else if (button.id == "decimal"){
-        var result = (number - Math.floor(number)) !== 0; 
+    }else if (button.id == "decimal"){   //prevents number from having 2 decimals
+        var result = number.includes(".");
         if (result){
             return;}  
         num.push(button.textContent)
@@ -51,16 +51,16 @@ buttons.onclick = function(){
         displayEquation.textContent = number;
     } 
 
-    else if (button.classList.contains("operator"))
+    else if (button.classList.contains("operator")) //enter operators
     {   
         operator = button.textContent;
         num.push(operator);
         displayEquation.textContent = num.join("");
 
-    }else if (button.classList.contains("all-clear")){
+    }else if (button.classList.contains("all-clear")){  //clears all on calculator
         allClear();
 
-    }else if (button.classList.contains("backspace")){
+    }else if (button.classList.contains("backspace")){ // deletes on in calculator
         backSpace()
 
     }else if (button.id == "Github"){
