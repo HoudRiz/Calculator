@@ -37,6 +37,7 @@ buttons.onclick = function(){
     if (button.classList.contains("number"))
     {   
         num.push(button.textContent)
+        number = num.join("");
         displayEquation.textContent = number;
     }else if (button.classList.contains("operator"))
     {   
@@ -44,7 +45,6 @@ buttons.onclick = function(){
         num.push(operator);
         displayEquation.textContent = num.join("");
     }; 
-    number = num.join("");
     console.log (number)
     
 }
