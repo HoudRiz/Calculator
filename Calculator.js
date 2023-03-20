@@ -34,7 +34,7 @@ let operator = "";
 let number = 0;
 let num = [];
 buttons.onclick = function(){
-    let button = event.target
+    let button = event.target.closest(".button")
     if (button.classList.contains("number"))
     {   
         num.push(button.textContent)
