@@ -1,5 +1,6 @@
 const displayEquation = document.querySelector(".equation")
 const buttons = document.querySelector(".button-container")
+const decimal = document.querySelector("#decimal")
 
 // Mathematical functions
 const add = function(num1,num2) {
@@ -39,6 +40,12 @@ buttons.onclick = function(){
     {   
         num.push(button.textContent)
         number = num.join("");
+        var result = (number - Math.floor(number)) !== 0; 
+   
+        if (result){
+            console.log('Number has a decimal place.');
+           
+        }
         displayEquation.textContent = number;
     }else if (button.classList.contains("operator"))
     {   
