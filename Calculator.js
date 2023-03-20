@@ -49,11 +49,9 @@ buttons.onclick = function(){
         allClear();
     }else if (button.classList.contains("backspace")){
         backSpace()
-        console.log (num)
-    console.log (number)
+    }else if (button.id == "Github"){
+        window.open("https://github.com/HoudRiz", "_blank");    }    
 
-    }    
-    console.log (number)
     
 }
 
