@@ -31,8 +31,10 @@ const operate = function(num1,num2,operator){
 
 //Displays number and operator on the screen
 // work in progress
+const operatorList = ["+", "-", "/","×" ]
 let operator = "";
 let number = 0;
+let previousNum = 0;
 let num = [];
 buttons.onclick = function(){
     let button = event.target.closest(".button") //enter numbers
@@ -56,7 +58,9 @@ buttons.onclick = function(){
         operator = button.textContent;
         num.push(operator);
         displayEquation.textContent = num.join("");
-
+        previousNum = number;
+        number = 0;
+        
     }else if (button.classList.contains("all-clear")){  //clears all on calculator
         allClear();
 
@@ -65,8 +69,9 @@ buttons.onclick = function(){
 
     }else if (button.id == "Github"){
         window.open("https://github.com/HoudRiz", "_blank");    }    
-
     
+    console.log(number)
+    console.log(previousNum)
 }
 
 const allClear = function(){
