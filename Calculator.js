@@ -26,7 +26,12 @@ const operate = function(num1,num2,operator){
     }else if (operator == " × "){
         answer = multiply(num1,num2)
     }else if (operator == " / "){
+        console.log(num2)
         answer = divide(num1,num2)
+        if(num2 == 0){
+            allClear()
+            answer = "press AC";
+        }
     }
     console.log(answer)
     answerDisplay.textContent = answer;
@@ -42,25 +47,33 @@ let previousNum = "";
 let num = [];
 buttons.onclick = function(){
     let button = event.target.closest(".button") //enter numbers
-    if (button.classList.contains("number"))
-    {   
-        num.push(button.textContent)
-        number = num.join("");
+    if (answer == "press AC"){
+        if (button.classList.contains("all-clear")){  //clears all on calculator
+            allClear();
+        }else{
+            return;
+        }
+    }else{
 
-    }else if (button.classList.contains("all-clear")){  //clears all on calculator
-        allClear();
-    
-    }else if (button.classList.contains("backspace")){ // deletes on in calculator (not working right now)
+        if (button.classList.contains("number"))
+        {   
+            num.push(button.textContent)
+            number = num.join("");
+            
+        }else if (button.classList.contains("all-clear")){  //clears all on calculator
+            allClear();
+            
+        }else if (button.classList.contains("backspace")){ // deletes on in calculator (not working right now)
         backSpace()
-
+        
     }else if (button.id == "decimal"){   //prevents number from having 2 decimals
         var result = number.includes(".");
         if (result){
             return;}  
-        num.push(button.textContent)
-        number = num.join("");
-    } 
-
+            num.push(button.textContent)
+            number = num.join("");
+        } 
+        
     else if (button.classList.contains("operator")) //enter operators
     {   if (previousOperator == true ){
         operator = button.textContent;
@@ -68,22 +81,21 @@ buttons.onclick = function(){
         previousNum = answer;
         number = "";
         num = [];
-    }else{
-        operator = button.textContent;
-        num.push(operator);
-        previousNum = number;
-        number = "";
-        num = [];
-        previousOperator = true
-    }
-        
-
+        }else{
+            operator = button.textContent;
+            num.push(operator);
+            previousNum = number;
+            number = "";
+            num = [];
+            previousOperator = true
+         }
     }else if (button.id == "Github"){
-        window.open("https://github.com/HoudRiz", "_blank");    
+            window.open("https://github.com/HoudRiz", "_blank");    
     }else if (button.id == "equal"){
         operate(previousNum,number,operator)
     }   
     displayEquation.textContent = `${previousNum} ${operator} ${number}` 
+}
 }
 
 const allClear = function(){
@@ -93,6 +105,8 @@ const allClear = function(){
     num = [];
     displayEquation.textContent = "";
     answerDisplay.textContent = "";
+    answer = "";
+    previousOperator = false;
 }
 const backSpace = function(){
     num.pop();
