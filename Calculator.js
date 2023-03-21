@@ -35,7 +35,7 @@ const operate = function(num1,num2,operator){
 
 //Displays number and operator on the screen
 // work in progress
-
+let previousOperator = false;
 let operator = "";
 let number = "";
 let previousNum = "";
@@ -62,12 +62,20 @@ buttons.onclick = function(){
     } 
 
     else if (button.classList.contains("operator")) //enter operators
-    {   
+    {   if (previousOperator == true ){
+        operator = button.textContent;
+        num.push(operator);
+        previousNum = answer;
+        number = "";
+        num = [];
+    }else{
         operator = button.textContent;
         num.push(operator);
         previousNum = number;
         number = "";
         num = [];
+        previousOperator = true
+    }
         
 
     }else if (button.id == "Github"){
