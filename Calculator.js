@@ -4,7 +4,7 @@ const decimal = document.querySelector("#decimal")
 
 // Mathematical functions
 const add = function(num1,num2) {
-	return  num1+ num2;
+	return  +num1 + +num2;
 };
 const subtract = function(num1,num2) {
 	return num1- num2;
@@ -16,22 +16,23 @@ const divide = function(num1,num2) {
 	return num1/ num2;
 };
 
-
+let answer = null;
 const operate = function(num1,num2,operator){
-    if (operator == "+"){
-        add(num1,num2)
-    }else if (operator == "-"){
-        subtract(num1,num2)
-    }else if (operator == "×"){
-        multiply(num1,num2)
-    }else if (operator == "/"){
-        divide(num1,num2)
+    if (operator == " + "){
+       answer = add(num1,num2)
+    }else if (operator == " - "){
+        answer = subtract(num1,num2)
+    }else if (operator == " × "){
+        answer = multiply(num1,num2)
+    }else if (operator == " / "){
+        answer = divide(num1,num2)
     }
+    console.log(answer)
 }
 
 //Displays number and operator on the screen
 // work in progress
-const operatorList = ["+", "-", "/","×" ]
+
 let operator = "";
 let number = "";
 let previousNum = "";
@@ -67,8 +68,12 @@ buttons.onclick = function(){
         backSpace()
 
     }else if (button.id == "Github"){
-        window.open("https://github.com/HoudRiz", "_blank");    }   
+        window.open("https://github.com/HoudRiz", "_blank");    
+    }else if (button.id == "equal"){
+        operate(previousNum,number,operator)
+    }   
     displayEquation.textContent = `${previousNum} ${operator} ${number}` 
+    
     console.log (operator)
     console.log(number)
     console.log(previousNum)
