@@ -33,8 +33,8 @@ const operate = function(num1,num2,operator){
 // work in progress
 const operatorList = ["+", "-", "/","×" ]
 let operator = "";
-let number = 0;
-let previousNum = 0;
+let number = "";
+let previousNum = "";
 let num = [];
 buttons.onclick = function(){
     let button = event.target.closest(".button") //enter numbers
@@ -42,7 +42,7 @@ buttons.onclick = function(){
     {   
         num.push(button.textContent)
         number = num.join("");
-        displayEquation.textContent = number;
+
 
     }else if (button.id == "decimal"){   //prevents number from having 2 decimals
         var result = number.includes(".");
@@ -50,33 +50,34 @@ buttons.onclick = function(){
             return;}  
         num.push(button.textContent)
         number = num.join("");
-        displayEquation.textContent = number;
     } 
 
     else if (button.classList.contains("operator")) //enter operators
     {   
         operator = button.textContent;
         num.push(operator);
-        displayEquation.textContent = num.join("");
         previousNum = number;
-        number = 0;
+        number = "";
+        num = [];
         
     }else if (button.classList.contains("all-clear")){  //clears all on calculator
         allClear();
 
-    }else if (button.classList.contains("backspace")){ // deletes on in calculator
+    }else if (button.classList.contains("backspace")){ // deletes on in calculator (not working right now)
         backSpace()
 
     }else if (button.id == "Github"){
-        window.open("https://github.com/HoudRiz", "_blank");    }    
-    
+        window.open("https://github.com/HoudRiz", "_blank");    }   
+    displayEquation.textContent = `${previousNum} ${operator} ${number}` 
+    console.log (operator)
     console.log(number)
     console.log(previousNum)
 }
 
 const allClear = function(){
     operator = "";
-    number = 0;
+    number = "";
+    previousNum = "";
     num = [];
     displayEquation.textContent = "";
 }
