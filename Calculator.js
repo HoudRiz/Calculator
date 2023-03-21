@@ -79,7 +79,7 @@ buttons.onclick = function(){
         num.push(operator);
         previousNum = answer;
         number = "";
-        num = [];
+        num = [];   //allows new numbers to be inputted into the number variable
         }else{
             operator = button.textContent;
             num.push(operator);
