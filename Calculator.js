@@ -26,7 +26,6 @@ const operate = function(num1,num2,operator){
     }else if (operator == " × "){
         answer = multiply(num1,num2)
     }else if (operator == " / "){
-        console.log(num2)
         answer = divide(num1,num2)
         answer = Math.round(answer * 1000) / 1000
         if(num2 == 0){
@@ -34,7 +33,6 @@ const operate = function(num1,num2,operator){
             answer = "press AC";
         }
     }
-    console.log(answer)
     answerDisplay.textContent = answer;
     return answer;
 }
@@ -96,7 +94,6 @@ buttons.onclick = function(){
         operate(previousNum,number,operator)
     }   
     displayEquation.textContent = `${previousNum} ${operator} ${number}` 
-    console.log(displayEquation.textContent.length)
 }
 }
 
@@ -113,10 +110,6 @@ const allClear = function(){
 const backSpace = function(){
     num.pop();
     number = number.substring(0,number.length-1);
-    // if ((number == "") && (operator !== "")){     hiding as this currently does not work as intended
-    //     operator = ""
-    //     console.log("this works")
-    // }
     displayEquation.textContent = number;
     answerDisplay.textContent = "";
 
