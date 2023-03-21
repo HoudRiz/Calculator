@@ -28,6 +28,7 @@ const operate = function(num1,num2,operator){
     }else if (operator == " / "){
         console.log(num2)
         answer = divide(num1,num2)
+        answer = Math.round(answer * 1000) / 1000
         if(num2 == 0){
             allClear()
             answer = "press AC";
@@ -95,6 +96,7 @@ buttons.onclick = function(){
         operate(previousNum,number,operator)
     }   
     displayEquation.textContent = `${previousNum} ${operator} ${number}` 
+    console.log(displayEquation.textContent.length)
 }
 }
 
