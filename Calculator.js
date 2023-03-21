@@ -19,7 +19,7 @@ const divide = function(num1,num2) {
 
 let answer = null;
 const operate = function(num1,num2,operator){
-    if (operator == " + "){
+    if ((operator == " + ")|| (operator == "")){
        answer = add(num1,num2)
     }else if (operator == " - "){
         answer = subtract(num1,num2)
@@ -47,6 +47,11 @@ buttons.onclick = function(){
         num.push(button.textContent)
         number = num.join("");
 
+    }else if (button.classList.contains("all-clear")){  //clears all on calculator
+        allClear();
+    
+    }else if (button.classList.contains("backspace")){ // deletes on in calculator (not working right now)
+        backSpace()
 
     }else if (button.id == "decimal"){   //prevents number from having 2 decimals
         var result = number.includes(".");
@@ -64,11 +69,6 @@ buttons.onclick = function(){
         number = "";
         num = [];
         
-    }else if (button.classList.contains("all-clear")){  //clears all on calculator
-        allClear();
-
-    }else if (button.classList.contains("backspace")){ // deletes on in calculator (not working right now)
-        backSpace()
 
     }else if (button.id == "Github"){
         window.open("https://github.com/HoudRiz", "_blank");    
@@ -76,10 +76,6 @@ buttons.onclick = function(){
         operate(previousNum,number,operator)
     }   
     displayEquation.textContent = `${previousNum} ${operator} ${number}` 
-    
-    console.log (operator)
-    console.log(number)
-    console.log(previousNum)
 }
 
 const allClear = function(){
@@ -93,6 +89,11 @@ const allClear = function(){
 const backSpace = function(){
     num.pop();
     number = number.substring(0,number.length-1);
+    // if ((number == "") && (operator !== "")){     hiding as this currently does not work as intended
+    //     operator = ""
+    //     console.log("this works")
+    // }
     displayEquation.textContent = number;
+    answerDisplay.textContent = "";
 
 }
