@@ -1,6 +1,7 @@
 const displayEquation = document.querySelector(".equation")
 const buttons = document.querySelector(".button-container")
 const decimal = document.querySelector("#decimal")
+const answerDisplay = document.querySelector(".answer")
 
 // Mathematical functions
 const add = function(num1,num2) {
@@ -28,6 +29,8 @@ const operate = function(num1,num2,operator){
         answer = divide(num1,num2)
     }
     console.log(answer)
+    answerDisplay.textContent = answer;
+    return answer;
 }
 
 //Displays number and operator on the screen
@@ -85,6 +88,7 @@ const allClear = function(){
     previousNum = "";
     num = [];
     displayEquation.textContent = "";
+    answerDisplay.textContent = "";
 }
 const backSpace = function(){
     num.pop();
